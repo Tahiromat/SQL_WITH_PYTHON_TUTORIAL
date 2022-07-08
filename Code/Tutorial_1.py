@@ -10,7 +10,7 @@ warnings.filterwarnings("ignore")
 # Your Database connection
 mydb = pymysql.connect(
     host='localhost', 
-    user='', 
+    user='tahir', 
     password=''
 )
 mycursor = mydb.cursor()

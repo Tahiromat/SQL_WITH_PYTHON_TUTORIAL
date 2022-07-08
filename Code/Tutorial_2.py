@@ -11,13 +11,46 @@ warnings.filterwarnings("ignore")
 # Your Database connection
 mydb = pymysql.connect(
     host='localhost', 
-    user='', 
+    user='tahir', 
     password=''
 )
 mycursor = mydb.cursor()
 
+############ ORDER BY DESC ############ 
 query = '''
-    
+    SELECT 
+        contactFirstname, contactLastname
+    FROM
+        classicmodels.customers
+    ORDER BY contactLastname DESC;
+'''
+
+############ ORDER BY ASC ############ 
+query = '''
+    SELECT 
+        contactFirstname, contactLastname
+    FROM
+        classicmodels.customers
+    ORDER BY contactLastname ASC;
+'''
+
+############ ORDER BY ASC AND DESC ############ 
+query = '''
+    SELECT 
+        contactLastname, contactFirstname
+    FROM
+        classicmodels.customers
+    ORDER BY contactLastname DESC , contactFirstname ASC;
+'''
+
+
+############ BASIC OPERATIONS WITH COLUMNS AND ORDER BY ############ 
+query = '''
+    SELECT 
+        quantityOrdered, priceEach, quantityOrdered * priceEach
+    FROM
+        classicmodels.orderdetails
+    ORDER BY quantityOrdered * priceEach DESC;
 '''
 
 # Execute the query
