@@ -1,5 +1,3 @@
-############  ############
-
 import pymysql
 pymysql.install_as_MySQLdb()
 
@@ -18,8 +16,9 @@ mycursor = mydb.cursor()
 
 ############  ############ 
 query = '''
-    
+
 '''
+
 
 # Execute the query
 mycursor.execute(query)
