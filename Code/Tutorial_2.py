@@ -10,7 +10,8 @@ warnings.filterwarnings("ignore")
 mydb = pymysql.connect(
     host='localhost', 
     user='tahir', 
-    password=''
+    password='',
+    database='classicmodels'
 )
 mycursor = mydb.cursor()
 
@@ -19,7 +20,7 @@ query = '''
     SELECT 
         contactFirstname, contactLastname
     FROM
-        classicmodels.customers
+        customers
     ORDER BY contactLastname DESC;
 '''
 
@@ -28,7 +29,7 @@ query = '''
     SELECT 
         contactFirstname, contactLastname
     FROM
-        classicmodels.customers
+        customers
     ORDER BY contactLastname ASC;
 '''
 
@@ -37,7 +38,7 @@ query = '''
     SELECT 
         contactLastname, contactFirstname
     FROM
-        classicmodels.customers
+        customers
     ORDER BY contactLastname DESC , contactFirstname ASC;
 '''
 
@@ -47,7 +48,7 @@ query = '''
     SELECT 
         quantityOrdered, priceEach, quantityOrdered * priceEach
     FROM
-        classicmodels.orderdetails
+        orderdetails
     ORDER BY quantityOrdered * priceEach DESC;
 '''
 

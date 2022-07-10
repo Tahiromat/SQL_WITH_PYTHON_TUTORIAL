@@ -10,25 +10,26 @@ warnings.filterwarnings("ignore")
 mydb = pymysql.connect(
     host='localhost', 
     user='tahir', 
-    password=''
+    password='',
+    database='classicmodels'
 )
 mycursor = mydb.cursor()
 
 
-############ SELECT ALL TABLE ############ If you want to select all columns use this query and comment other queries
+############ SELECT ALL TABLE ############ 
 query = '''
     SELECT 
         *
     FROM
-        classicmodels.employees;
+        employees;
 '''
 
-############ SELECT ONE OR MORE COLUMNS ############ If you want to select specific column or columns use this query and comment other queries
+############ SELECT ONE OR MORE COLUMNS ############ 
 query = '''
     SELECT 
         employeeNumber, firstName, lastName
     FROM
-        classicmodels.employees;
+        employees;
 '''
 
 # Execute the query

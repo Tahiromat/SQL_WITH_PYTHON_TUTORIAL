@@ -10,7 +10,8 @@ warnings.filterwarnings("ignore")
 mydb = pymysql.connect(
     host='localhost', 
     user='tahir', 
-    password=''
+    password='',
+    database='classicmodels'
 )
 mycursor = mydb.cursor()
 
@@ -19,7 +20,7 @@ query = '''
     SELECT 
         firstname, lastname, jobtitle
     FROM
-        classicmodels.employees
+        employees
     WHERE
         jobtitle = 'Sales Rep';
 '''
@@ -29,7 +30,7 @@ query = '''
     SELECT 
         lastname, firstname, jobtitle, officeCode
     FROM
-        classicmodels.employees
+        employees
     WHERE
         jobtitle = 'Sales Rep'
             AND officeCode = 1;
@@ -40,7 +41,7 @@ query = '''
     SELECT 
         lastName, firstName, jobTitle, officeCode
     FROM
-        classicmodels.employees
+        employees
     WHERE
         jobtitle = 'Sales Rep' OR officeCode = 1
     ORDER BY officeCode , jobTitle;
@@ -51,7 +52,7 @@ query = '''
     SELECT 
         firstName, lastName
     FROM
-        classicmodels.employees
+        employees
     WHERE
         lastName LIKE '%son'
     ORDER BY firstName;
@@ -62,7 +63,7 @@ query = '''
     SELECT 
         firstName, lastName, officeCode
     FROM
-        classicmodels.employees
+        employees
     WHERE
         officeCode IN (1 , 2, 3)
     ORDER BY officeCode;
@@ -73,7 +74,7 @@ query = '''
     SELECT 
         lastName, firstName, reportsTo
     FROM
-        classicmodels.employees
+        employees
     WHERE
         reportsTo IS NULL;
 '''
@@ -83,7 +84,7 @@ query = '''
     SELECT 
         firstname, lastname, officeCode
     FROM
-        classicmodels.employees
+        employees
     WHERE
         officecode > 5;
 '''
